@@ -48,24 +48,25 @@ body{
 /* ===== SLIDER FIXED แนวนอน ===== */
 .slider{
     width:100%;
-    max-width:900px;
-    aspect-ratio:16/9;   /* 👈 คุมสัดส่วนตรงนี้ */
+    max-width:700px;
     margin:30px auto;
+    border-radius:20px;
     overflow:hidden;
-    border-radius:16px;
-    position:relative;
+    aspect-ratio:16/9;   /* สำคัญมาก */
 }
 
 .slides{
     display:flex;
-    width:700%;
-    animation:slide 49s ease-in-out infinite;
+    width:100%;
+    height:100%;   /* ต้องมี */
 }
 
 .slides img{
     width:100%;
     height:100%;
-    object-fit:cover;   /* เต็มกรอบ ไม่ยืด */
+    object-fit:contain;
+    background:black;
+    flex-shrink:0;
 }
 
 @keyframes slide{
@@ -150,15 +151,19 @@ body{
 
 
 /* รูปกิจกรรม */
+.activity-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr; /* 2 รูปต่อแถว */
+    gap:15px;
+    margin:20px 0;
+}
+
 .activity-img{
     width:100%;
-    max-width:350px;
-    aspect-ratio:16/9;
+    aspect-ratio:1/1; /* สี่เหลี่ยมจัตุรัส */
     object-fit:cover;
     border-radius:12px;
-    margin:15px auto;
-    display:block;
-}
+    }
 
 
     
