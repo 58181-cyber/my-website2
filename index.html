@@ -48,8 +48,8 @@ body{
 /* ===== SLIDER FIXED แนวนอน ===== */
 .slider{
     width:100%;
-    max-width:700px;
-    aspect-ratio:16/9;   /* ทำให้สวยแนวนอนอัตโนมัติ */
+    max-width:900px;
+    aspect-ratio:16/9;   /* 👈 คุมสัดส่วนตรงนี้ */
     margin:30px auto;
     overflow:hidden;
     border-radius:16px;
@@ -65,7 +65,7 @@ body{
 .slides img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:cover;   /* เต็มกรอบ ไม่ยืด */
 }
 
 @keyframes slide{
@@ -152,7 +152,7 @@ body{
 /* รูปกิจกรรม */
 .activity-img{
     width:100%;
-    max-width:600px;
+    max-width:350px;
     aspect-ratio:16/9;
     object-fit:cover;
     border-radius:12px;
