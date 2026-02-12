@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
 
-<!-- Google Font Kanit -->
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -44,11 +43,11 @@ body{
 .profile{
     width:135px;
     height:145px;
-    border-radius:50%;
     object-fit:cover;
     border:4px solid var(--orange);
 }
 
+/* TITLE */
 .title-area{
     text-align:center;
     flex:1;
@@ -65,9 +64,9 @@ body{
     font-weight:400;
 }
 
-/* SECTION */
+/* ACCORDION SECTION */
 .section{
-    margin-bottom:40px;
+    margin-bottom:25px;
 }
 
 .section-title{
@@ -75,8 +74,53 @@ body{
     font-size:22px;
     font-weight:600;
     border-bottom:3px solid var(--orange);
-    padding-bottom:5px;
-    margin-bottom:20px;
+    padding:12px;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.section-title::after{
+    content:"▼";
+    position:absolute;
+    right:15px;
+    transition:0.3s;
+}
+
+.section.active .section-title::after{
+    transform:rotate(180deg);
+}
+
+/* Ripple */
+.section-title span{
+    position:relative;
+    z-index:2;
+}
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple 0.6s linear;
+    background:rgba(255,90,39,0.4);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* CONTENT */
+.section-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease;
+}
+
+.section.active .section-content{
+    max-height:2000px;
 }
 
 /* BOX */
@@ -91,6 +135,13 @@ body{
     padding:15px;
     margin-bottom:12px;
     border-radius:8px;
+}
+
+/* LINK STYLE */
+.small-box a{
+    text-decoration:none;
+    color:inherit;
+    font-weight:600;
 }
 
 /* ESSAY */
@@ -116,14 +167,13 @@ body{
     opacity:0.8;
 }
 
-/* COUNTER */
 .counter{
     text-align:center;
     margin-top:20px;
     font-weight:600;
 }
 
-/* 🌙DARK MODE */
+/* DARK MODE */
 .dark{
     background:#121212;
     color:#ffffff;
@@ -138,11 +188,6 @@ body{
     background:#2a2a2a;
 }
 
-.dark .footer{
-    opacity:0.6;
-}
-
-/* BUTTON */
 .toggle-btn{
     position:fixed;
     bottom:20px;
@@ -169,33 +214,43 @@ body{
 
 <div class="container">
 
-<!-- HEADER -->
 <div class="header">
     <img src="logo.png" class="logo">
-    
     <div class="title-area">
         <h1>มหาวิทยาลัยนเรศวร</h1>
         <h2>คณะวิทยาศาสตร์การแพทย์ สาขาจุลชีววิทยา</h2>
     </div>
-
     <img src="Profile.jpg" class="profile">
 </div>
 
 <!-- ข้อมูลส่วนตัว -->
 <div class="section">
-<div class="section-title">ข้อมูลส่วนตัว</div>
+<div class="section-title"><span>ข้อมูลส่วนตัว</span></div>
+<div class="section-content">
 <div class="big-box">
     <div class="small-box">ชื่อ-นามสกุล : นายพัชรวัฒน์ กันตุง</div>
-    <div class="small-box">อีเมล : phatcharawat2551@gmail.com</div>
-    <div class="small-box">เบอร์มือถือ : 0825538799</div>
+    <div class="small-box">
+        อีเมล :
+        <a href="mailto:phatcharawat2551@gmail.com">
+        phatcharawat2551@gmail.com
+        </a>
+    </div>
+    <div class="small-box">
+        เบอร์มือถือ :
+        <a href="tel:0825538799">
+        0825538799
+        </a>
+    </div>
     <div class="small-box">น้ำหนัก : 95 กิโลกรัม</div>
     <div class="small-box">ส่วนสูง : 179 เซนติเมตร</div>
+</div>
 </div>
 </div>
 
 <!-- ข้อมูลการศึกษา -->
 <div class="section">
-<div class="section-title">ข้อมูลการศึกษา</div>
+<div class="section-title"><span>ข้อมูลการศึกษา</span></div>
+<div class="section-content">
 <div class="big-box">
     <div class="small-box">ชื่อโรงเรียน : หล่มสักวิทยาคม</div>
     <div class="small-box">จังหวัด : เพชรบูรณ์</div>
@@ -208,21 +263,22 @@ body{
     <div class="small-box">TPAT3 : 39.666</div>
 </div>
 </div>
+</div>
 
 <!-- เรียงความ -->
 <div class="section">
-<div class="section-title">เรียงความ</div>
+<div class="section-title"><span>เรียงความ</span></div>
+<div class="section-content">
 <div class="essay">
-สวัสดีครับผมนายพัชรวัฒน์ กันตุง นักเรียนชั้นมัธยมศึกษาปีที่ 6 มีความสนใจในศาสตร์ทางชีววิทยามาตั้งแต่ระดับมัธยมศึกษา โดยเฉพาะอย่างยิ่งด้าน จุลชีววิทยา ซึ่งเป็นแขนงที่ผมรู้สึกว่าตัวเองมีความถนัดและสามารถทำความเข้าใจได้ดีเป็นพิเศษ ความชื่นชอบนี้เกิดจากความหลงใหลใน “สิ่งมีชีวิตขนาดเล็ก” ที่แม้มองไม่เห็นด้วยตาเปล่า แต่กลับมีบทบาทสำคัญต่อชีวิตมนุษย์ ระบบนิเวศ และวงการแพทย์สมัยใหม่
-ผมเป็นคนที่สนใจเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ โดยเฉพาะการทดลองทางวิทยาศาสตร์และการสังเกตเชิงลึก การได้ใช้ กล้องจุลทรรศน์ เพื่อค้นหาความจริงที่ซ่อนอยู่ในระดับเซลล์ทำให้ผมรู้สึกท้าทายและสนุกกับการเรียนรู้มากขึ้น นอกจากนี้ วิชาชีววิทยายังเป็นรายวิชาที่ผมทำได้ดี ทั้งด้านทฤษฎีและปฏิบัติ ทำให้ผมมั่นใจว่าตัวเองเหมาะสมกับการศึกษาต่อในสาขานี้
-เหตุผลสำคัญที่ผมเลือกสมัคร สาขาจุลชีววิทยา มหาวิทยาลัยนเรศวร คือหลักสูตรที่มีความเข้มข้นทั้งภาคทฤษฎีและปฏิบัติ การมีห้องปฏิบัติการทันสมัย รวมทั้งโอกาสในการทำงานวิจัยที่เกี่ยวข้องกับการแพทย์ ทำให้ผมเชื่อว่านี่จะเป็นสถานที่ที่ช่วยพัฒนาศักยภาพของผมได้อย่างเต็มที่ ผมมีความตั้งใจที่จะนำความรู้ที่ได้รับไปต่อยอดในอนาคต ไม่ว่าจะเป็นด้าน การวิจัยโรคติดเชื้อ การวินิจฉัยทางห้องปฏิบัติการ หรือการทำงานในสายวิทยาศาสตร์การแพทย์
-ผมหวังเป็นอย่างยิ่งว่าจะได้รับโอกาสเข้าศึกษาในสาขานี้ เพื่อพัฒนาความรู้ ความสามารถ และเติบโตเป็นบุคลากรที่สามารถช่วยพัฒนาองค์ความรู้ด้านจุลชีววิทยาและวิทยาศาสตร์การแพทย์ของประเทศต่อไป
+สวัสดีครับผมนายพัชรวัฒน์ กันตุง นักเรียนชั้นมัธยมศึกษาปีที่ 6 ...
+</div>
 </div>
 </div>
 
 <!-- กิจกรรม -->
 <div class="section">
-<div class="section-title">กิจกรรม</div>
+<div class="section-title"><span>กิจกรรม</span></div>
+<div class="section-content">
 <div class="big-box">
     <div class="small-box">
         ชื่อกิจกรรม : แข่งขันยิงเป้าด้วยจรวดขวดน้ำประเภทแม่นยำ
@@ -230,9 +286,9 @@ body{
     <div class="small-box">
         รายละเอียด : เข้าร่วมการแข่งขันระดับมัธยมศึกษาตอนปลาย ณ มหาวิทยาลัยราชภัฏเพชรบูรณ์
     </div>
-
     <img src="กิจกรรม1.jpg" class="activity-img">
     <img src="กิจกรรม2.jpg" class="activity-img">
+</div>
 </div>
 </div>
 
@@ -241,7 +297,8 @@ body{
 </div>
 
 <div class="footer">
-© 2026 By Phatcharawat Kantung | Version 5.1.2.8
+© 2026 By Phatcharawat Kantung 
+    Version 5.1.2.9
 </div>
 
 </div>
@@ -249,13 +306,34 @@ body{
 <button class="toggle-btn" onclick="toggleDark()">Dark Mode</button>
 
 <script>
+
+/* Accordion */
+const sections = document.querySelectorAll(".section");
+sections.forEach(section=>{
+    section.querySelector(".section-title").addEventListener("click",function(e){
+
+        sections.forEach(s=>{
+            if(s!==section) s.classList.remove("active");
+        });
+
+        section.classList.toggle("active");
+
+        // Ripple
+        const circle=document.createElement("span");
+        circle.classList.add("ripple");
+        this.appendChild(circle);
+        const d=Math.max(this.clientWidth,this.clientHeight);
+        circle.style.width=circle.style.height=d+"px";
+        circle.style.left=e.clientX-this.offsetLeft-d/2+"px";
+        circle.style.top=e.clientY-this.offsetTop-d/2+"px";
+        setTimeout(()=>circle.remove(),600);
+    });
+});
+
 /* Counter */
 let count = localStorage.getItem("visitorCount");
-if(count === null){
-    count = 1;
-}else{
-    count = parseInt(count) + 1;
-}
+if(count === null){ count = 1; }
+else{ count = parseInt(count) + 1; }
 localStorage.setItem("visitorCount", count);
 document.getElementById("visitorCount").innerText = count;
 
@@ -263,6 +341,7 @@ document.getElementById("visitorCount").innerText = count;
 function toggleDark(){
     document.body.classList.toggle("dark");
 }
+
 </script>
 
 </body>
