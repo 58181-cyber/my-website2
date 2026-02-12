@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
     --orange:#ff5a27;
     --box-small:#eae5e5;
@@ -33,18 +32,55 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:40px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
 }
 
-.logo{
-    width:80px;
-}
+.logo{ width:80px; }
 
 .profile{
     width:135px;
     height:145px;
     object-fit:cover;
     border:4px solid var(--orange);
+}
+
+/* SLIDER */
+.slider{
+    width:100%;
+    max-width:300px;
+    margin:20px auto;
+    overflow:hidden;
+    border-radius:12px;
+    position:relative;
+}
+
+.slides{
+    display:flex;
+    width:700%;
+    animation:slide 21s infinite;
+}
+
+.slides img{
+    width:100%;
+    object-fit:cover;
+}
+
+@keyframes slide{
+    0%{transform:translateX(0);}
+    14%{transform:translateX(0);}
+    16%{transform:translateX(-100%);}
+    30%{transform:translateX(-100%);}
+    32%{transform:translateX(-200%);}
+    46%{transform:translateX(-200%);}
+    48%{transform:translateX(-300%);}
+    62%{transform:translateX(-300%);}
+    64%{transform:translateX(-400%);}
+    78%{transform:translateX(-400%);}
+    80%{transform:translateX(-500%);}
+    94%{transform:translateX(-500%);}
+    96%{transform:translateX(-600%);}
+    100%{transform:translateX(-600%);}
 }
 
 /* TITLE */
@@ -56,7 +92,6 @@ body{
 .title-area h1{
     margin:0;
     color:var(--orange);
-    font-weight:600;
 }
 
 .title-area h2{
@@ -64,10 +99,8 @@ body{
     font-weight:400;
 }
 
-/* ACCORDION SECTION */
-.section{
-    margin-bottom:25px;
-}
+/* SECTION */
+.section{ margin-bottom:25px; }
 
 .section-title{
     color:var(--orange);
@@ -91,28 +124,6 @@ body{
     transform:rotate(180deg);
 }
 
-/* Ripple */
-.section-title span{
-    position:relative;
-    z-index:2;
-}
-
-.ripple{
-    position:absolute;
-    border-radius:50%;
-    transform:scale(0);
-    animation:ripple 0.6s linear;
-    background:rgba(255,90,39,0.4);
-}
-
-@keyframes ripple{
-    to{
-        transform:scale(4);
-        opacity:0;
-    }
-}
-
-/* CONTENT */
 .section-content{
     max-height:0;
     overflow:hidden;
@@ -120,10 +131,9 @@ body{
 }
 
 .section.active .section-content{
-    max-height:2000px;
+    max-height:5000px;
 }
 
-/* BOX */
 .big-box{
     background:var(--box-big);
     padding:20px;
@@ -137,11 +147,10 @@ body{
     border-radius:8px;
 }
 
-/* LINK STYLE */
 .small-box a{
     text-decoration:none;
-    color:inherit;
     font-weight:600;
+    color:inherit;
 }
 
 /* ESSAY */
@@ -150,13 +159,6 @@ body{
     padding:20px;
     border-radius:8px;
     line-height:1.8;
-}
-
-/* ACTIVITY IMAGE */
-.activity-img{
-    width:100%;
-    border-radius:10px;
-    margin-top:15px;
 }
 
 /* FOOTER */
@@ -178,15 +180,9 @@ body{
     background:#121212;
     color:#ffffff;
 }
-
-.dark .big-box{
-    background:#1e1e1e;
-}
-
+.dark .big-box{ background:#1e1e1e; }
 .dark .small-box,
-.dark .essay{
-    background:#2a2a2a;
-}
+.dark .essay{ background:#2a2a2a; }
 
 .toggle-btn{
     position:fixed;
@@ -200,14 +196,6 @@ body{
     cursor:pointer;
 }
 
-@media(max-width:768px){
-    .header{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
-    }
-}
-
 </style>
 </head>
 <body>
@@ -216,11 +204,26 @@ body{
 
 <div class="header">
     <img src="logo.png" class="logo">
+
     <div class="title-area">
         <h1>มหาวิทยาลัยนเรศวร</h1>
         <h2>คณะวิทยาศาสตร์การแพทย์ สาขาจุลชีววิทยา</h2>
     </div>
+
     <img src="Profile.jpg" class="profile">
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="slide1.jpg">
+        <img src="slide2.jpg">
+        <img src="slide3.jpg">
+        <img src="slide4.jpg">
+        <img src="slide5.jpg">
+        <img src="slide6.jpg">
+        <img src="slide7.jpg">
+    </div>
 </div>
 
 <!-- ข้อมูลส่วนตัว -->
@@ -229,20 +232,29 @@ body{
 <div class="section-content">
 <div class="big-box">
     <div class="small-box">ชื่อ-นามสกุล : นายพัชรวัฒน์ กันตุง</div>
-    <div class="small-box">
-        อีเมล :
-        <a href="mailto:phatcharawat2551@gmail.com">
-        phatcharawat2551@gmail.com
-        </a>
-    </div>
-    <div class="small-box">
-        เบอร์มือถือ :
-        <a href="tel:0825538799">
-        0825538799
-        </a>
-    </div>
+    <div class="small-box">ชื่อเล่น : เมฆ</div>
+    <div class="small-box">วันเดือนปีเกิด : 2 มีนาคม 2551</div>
+    <div class="small-box">อายุ : 17 ปี</div>
+    <div class="small-box">เชื้อชาติ : ไทย</div>
+    <div class="small-box">สัญชาติ : ไทย</div>
+    <div class="small-box">ศาสนา : พุทธศาสนา</div>
+    <div class="small-box">หมู่โลหิต : B</div>
     <div class="small-box">น้ำหนัก : 95 กิโลกรัม</div>
     <div class="small-box">ส่วนสูง : 179 เซนติเมตร</div>
+</div>
+</div>
+</div>
+
+<!-- ช่องทางการติดต่อ -->
+<div class="section">
+<div class="section-title"><span>ช่องทางการติดต่อ</span></div>
+<div class="section-content">
+<div class="big-box">
+    <div class="small-box">เบอร์มือถือ : <a href="tel:0825538799">0825538799</a></div>
+    <div class="small-box">อีเมล : <a href="mailto:phatcharawat2551@gmail.com">phatcharawat2551@gmail.com</a></div>
+    <div class="small-box">Facebook : <a href="https://www.facebook.com/share/1Ca1bWpS4i/" target="_blank">Phatcharawat Kantung</a></div>
+    <div class="small-box">Instagram : <a href="https://www.instagram.com/i_eternally_" target="_blank">i_eternally_</a></div>
+    <div class="small-box">LINE : <a href="https://line.me/ti/p/NXc3GYhkwY" target="_blank">พัชรวัฒน์ กันตุงไลนใหม่</a></div>
 </div>
 </div>
 </div>
@@ -264,13 +276,14 @@ body{
 </div>
 </div>
 </div>
-
-<!-- เรียงความ -->
 <div class="section">
 <div class="section-title"><span>เรียงความ</span></div>
 <div class="section-content">
 <div class="essay">
-สวัสดีครับผมนายพัชรวัฒน์ กันตุง นักเรียนชั้นมัธยมศึกษาปีที่ 6 ...
+สวัสดีครับผมนายพัชรวัฒน์ กันตุง นักเรียนชั้นมัธยมศึกษาปีที่ 6 มีความสนใจในศาสตร์ทางชีววิทยามาตั้งแต่ระดับมัธยมศึกษา โดยเฉพาะอย่างยิ่งด้าน จุลชีววิทยา ซึ่งเป็นแขนงที่ผมรู้สึกว่าตัวเองมีความถนัดและสามารถทำความเข้าใจได้ดีเป็นพิเศษ ความชื่นชอบนี้เกิดจากความหลงใหลใน “สิ่งมีชีวิตขนาดเล็ก” ที่แม้มองไม่เห็นด้วยตาเปล่า แต่กลับมีบทบาทสำคัญต่อชีวิตมนุษย์ ระบบนิเวศ และวงการแพทย์สมัยใหม่
+ผมเป็นคนที่สนใจเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ โดยเฉพาะการทดลองทางวิทยาศาสตร์และการสังเกตเชิงลึก การได้ใช้ กล้องจุลทรรศน์ เพื่อค้นหาความจริงที่ซ่อนอยู่ในระดับเซลล์ทำให้ผมรู้สึกท้าทายและสนุกกับการเรียนรู้มากขึ้น นอกจากนี้ วิชาชีววิทยายังเป็นรายวิชาที่ผมทำได้ดี ทั้งด้านทฤษฎีและปฏิบัติ ทำให้ผมมั่นใจว่าตัวเองเหมาะสมกับการศึกษาต่อในสาขานี้
+เหตุผลสำคัญที่ผมเลือกสมัคร สาขาจุลชีววิทยา มหาวิทยาลัยนเรศวร คือหลักสูตรที่มีความเข้มข้นทั้งภาคทฤษฎีและปฏิบัติ การมีห้องปฏิบัติการทันสมัย รวมทั้งโอกาสในการทำงานวิจัยที่เกี่ยวข้องกับการแพทย์ ทำให้ผมเชื่อว่านี่จะเป็นสถานที่ที่ช่วยพัฒนาศักยภาพของผมได้อย่างเต็มที่ ผมมีความตั้งใจที่จะนำความรู้ที่ได้รับไปต่อยอดในอนาคต ไม่ว่าจะเป็นด้าน การวิจัยโรคติดเชื้อ การวินิจฉัยทางห้องปฏิบัติการ หรือการทำงานในสายวิทยาศาสตร์การแพทย์
+ผมหวังเป็นอย่างยิ่งว่าจะได้รับโอกาสเข้าศึกษาในสาขานี้ เพื่อพัฒนาความรู้ ความสามารถ และเติบโตเป็นบุคลากรที่สามารถช่วยพัฒนาองค์ความรู้ด้านจุลชีววิทยาและวิทยาศาสตร์การแพทย์ของประเทศต่อไป
 </div>
 </div>
 </div>
@@ -291,14 +304,12 @@ body{
 </div>
 </div>
 </div>
-
 <div class="counter">
 จำนวนผู้เข้าชม : <span id="visitorCount">0</span> ครั้ง
 </div>
 
 <div class="footer">
-© 2026 By Phatcharawat Kantung 
-    Version 5.1.2.9
+© 2026 By Phatcharawat Kantung | Version 5.1.3.3
 </div>
 
 </div>
@@ -306,42 +317,22 @@ body{
 <button class="toggle-btn" onclick="toggleDark()">Dark Mode</button>
 
 <script>
-
-/* Accordion */
 const sections = document.querySelectorAll(".section");
 sections.forEach(section=>{
-    section.querySelector(".section-title").addEventListener("click",function(e){
-
-        sections.forEach(s=>{
-            if(s!==section) s.classList.remove("active");
-        });
-
+    section.querySelector(".section-title").addEventListener("click",function(){
+        sections.forEach(s=>{ if(s!==section) s.classList.remove("active"); });
         section.classList.toggle("active");
-
-        // Ripple
-        const circle=document.createElement("span");
-        circle.classList.add("ripple");
-        this.appendChild(circle);
-        const d=Math.max(this.clientWidth,this.clientHeight);
-        circle.style.width=circle.style.height=d+"px";
-        circle.style.left=e.clientX-this.offsetLeft-d/2+"px";
-        circle.style.top=e.clientY-this.offsetTop-d/2+"px";
-        setTimeout(()=>circle.remove(),600);
     });
 });
 
-/* Counter */
 let count = localStorage.getItem("visitorCount");
-if(count === null){ count = 1; }
-else{ count = parseInt(count) + 1; }
-localStorage.setItem("visitorCount", count);
-document.getElementById("visitorCount").innerText = count;
+count = count ? parseInt(count)+1 : 1;
+localStorage.setItem("visitorCount",count);
+document.getElementById("visitorCount").innerText=count;
 
-/* Dark Mode */
 function toggleDark(){
     document.body.classList.toggle("dark");
 }
-
 </script>
 
 </body>
