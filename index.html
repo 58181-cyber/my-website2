@@ -31,11 +31,17 @@ body{
 .header{
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;   /* เปลี่ยนจาก space-between */
+    gap:20px;                 /* เพิ่มระยะห่าง */
     margin-bottom:20px;
     flex-wrap:wrap;
+    text-align:center;
 }
 
+.title-area{
+    text-align:center;
+}
+    
 .logo{ width:100px; }
 
 .profile{
@@ -104,6 +110,12 @@ body{
     font-weight:400;
 }
 
+.title-area h3{
+    margin:5px 0;
+    font-weight:500;
+    color:#666;
+}
+    
 /* SECTION */
 .section{ margin-bottom:25px; }
 
@@ -136,7 +148,7 @@ body{
 }
 
 .section.active .section-content{
-    max-height:500px;
+    max-height:2000px;
 }
 
 .big-box{
@@ -220,8 +232,9 @@ body{
     <img src="logo.png" class="logo">
 
     <div class="title-area">
-        <h1>มหาวิทยาลัยนเรศวร</h1>
-        <h2>คณะวิทยาศาสตร์การแพทย์ สาขาจุลชีววิทยา</h2>
+    <h1>มหาวิทยาลัยนเรศวร</h1>
+    <h3>แฟ้มสะสมผลงาน</h3>
+    <h2>คณะวิทยาศาสตร์การแพทย์ สาขาจุลชีววิทยา</h2>
     </div>
 
     <img src="Profile.jpg" class="profile">
@@ -259,6 +272,23 @@ body{
 </div>
 </div>
 
+<!-- ข้อมูลการศึกษา -->  <div class="section">  
+<div class="section-title"><span>ข้อมูลการศึกษา</span></div>  
+<div class="section-content">  
+<div class="big-box">  
+    <div class="small-box">ชื่อโรงเรียน : หล่มสักวิทยาคม</div>  
+    <div class="small-box">จังหวัด : เพชรบูรณ์</div>  
+    <div class="small-box">หลักสูตร : หลักสูตรแกนกลาง (สามัญ)</div>  
+    <div class="small-box">GPAX 5 ภาคเรียน : 3.27</div>  
+    <div class="small-box">TGAT : 52.412</div>  
+    <div class="small-box">TGAT1 : 35.000</div>  
+    <div class="small-box">TGAT2 : 45.569</div>  
+    <div class="small-box">TGAT3 : 76.666</div>  
+    <div class="small-box">TPAT3 : 39.666</div>  
+</div>  
+</div>  
+</div>
+
 <!-- ช่องทางการติดต่อ -->
 <div class="section">
 <div class="section-title">ช่องทางการติดต่อ</div>
@@ -277,7 +307,8 @@ body{
 <div class="section">
 <div class="section-title"><span>เรียงความ</span></div>
 <div class="section-content">
-<div class="essay">
+    <div class="big-box">
+        <div class="small-box">
 สวัสดีครับผมนายพัชรวัฒน์ กันตุง นักเรียนชั้นมัธยมศึกษาปีที่ 6 มีความสนใจในศาสตร์ทางชีววิทยามาตั้งแต่ระดับมัธยมศึกษา โดยเฉพาะอย่างยิ่งด้าน จุลชีววิทยา ซึ่งเป็นแขนงที่ผมรู้สึกว่าตัวเองมีความถนัดและสามารถทำความเข้าใจได้ดีเป็นพิเศษ ความชื่นชอบนี้เกิดจากความหลงใหลใน “สิ่งมีชีวิตขนาดเล็ก” ที่แม้มองไม่เห็นด้วยตาเปล่า แต่กลับมีบทบาทสำคัญต่อชีวิตมนุษย์ ระบบนิเวศ และวงการแพทย์สมัยใหม่  
 ผมเป็นคนที่สนใจเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ โดยเฉพาะการทดลองทางวิทยาศาสตร์และการสังเกตเชิงลึก การได้ใช้ กล้องจุลทรรศน์ เพื่อค้นหาความจริงที่ซ่อนอยู่ในระดับเซลล์ทำให้ผมรู้สึกท้าทายและสนุกกับการเรียนรู้มากขึ้น นอกจากนี้ วิชาชีววิทยายังเป็นรายวิชาที่ผมทำได้ดี ทั้งด้านทฤษฎีและปฏิบัติ ทำให้ผมมั่นใจว่าตัวเองเหมาะสมกับการศึกษาต่อในสาขานี้  
 เหตุผลสำคัญที่ผมเลือกสมัคร สาขาจุลชีววิทยา มหาวิทยาลัยนเรศวร คือหลักสูตรที่มีความเข้มข้นทั้งภาคทฤษฎีและปฏิบัติ การมีห้องปฏิบัติการทันสมัย รวมทั้งโอกาสในการทำงานวิจัยที่เกี่ยวข้องกับการแพทย์ ทำให้ผมเชื่อว่านี่จะเป็นสถานที่ที่ช่วยพัฒนาศักยภาพของผมได้อย่างเต็มที่ ผมมีความตั้งใจที่จะนำความรู้ที่ได้รับไปต่อยอดในอนาคต ไม่ว่าจะเป็นด้าน การวิจัยโรคติดเชื้อ การวินิจฉัยทางห้องปฏิบัติการ หรือการทำงานในสายวิทยาศาสตร์การแพทย์  
