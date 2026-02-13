@@ -303,34 +303,36 @@ button:hover{
     font-weight:600;
 }
 
-/* DARK MODE */
-.dark{
-    .dark {
+/* ===== DARK MODE FIX ===== */
+
+body.dark{
     background:#121212;
     color:#ffffff;
 }
 
-.dark .container {
+body.dark .container{
     background:#1e1e1e;
 }
 
-.dark .small-box,
-.dark .big-box {
+body.dark .big-box,
+body.dark .small-box{
     background:#2a2a2a;
-    color:white;
+    color:#ffffff;
 }
 
-.dark a {
+body.dark a{
     color:#ff7a45;
 }
 
-.dark .section-title {
+body.dark .section-title{
     color:#ff7a45;
     border-bottom:3px solid #ff7a45;
-    }
 }
-.dark .big-box{ background:#1e1e1e; }
-.dark .small-box{ background:#2a2a2a; }
+
+body.dark .footer,
+body.dark .counter{
+    color:#ffffff;
+}
 
 .toggle-btn{
     position:fixed;
