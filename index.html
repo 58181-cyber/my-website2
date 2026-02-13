@@ -117,6 +117,28 @@ button:hover{
     text-align:center;
 }
 
+    /* HEADER ด้านบนลอยแยก */
+.top-header{
+    text-align:center;
+    padding:40px 20px 10px 20px;
+    color:white;
+}
+
+.top-header .logo{
+    width:90px;
+    margin-bottom:10px;
+}
+
+.top-header h1{
+    margin:0;
+    font-size:26px;
+    font-weight:600;
+}
+
+/* ดันกล่องขาวลงมานิดนึง */
+.container{
+    margin:20px auto 60px auto;
+}
 .title-area{
     text-align:center;
 }
@@ -305,16 +327,20 @@ button:hover{
 
 <body>
 
-<div class="container">
-
-<div class="header">
+<!-- TOP HEADER แยกออกมา -->
+<div class="top-header">
     <img src="logo.png" class="logo">
 
-    <div class="title-area">
     <h1>มหาวิทยาลัยนเรศวร</h1>
     <h3>แฟ้มสะสมผลงาน</h3>
     <h2>คณะวิทยาศาสตร์การแพทย์ สาขาจุลชีววิทยา</h2>
-    </div>
+</div>
+
+<!-- กล่องขาว -->
+<div class="container">
+
+    <!-- เอา profile ไว้ใน container -->
+    <img src="Profile.jpg" class="profile">
 
     <img src="Profile.jpg" class="profile">
 </div>
